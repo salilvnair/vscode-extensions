@@ -11,11 +11,15 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
+            {
+                "command": "extension.sayHello1",
+                "title": "Init Hello"
+            },
             {
                 "command": "extension.track",
                 "title": "Git-Track"
@@ -31,35 +35,34 @@
         ],
         "menus": {
             "editor/context": [
-              {
-                "command": "extension.track",
-                "group": "navigation"
-              },
-              {
-                "command": "extension.untrack",
-                "group": "navigation"
-              },
-              {
-                "command": "extension.untrackList",
-                "group": "navigation"
-              }
-            ],
-            "explorer/context": [
-				{
+                {
                     "command": "extension.track",
                     "group": "navigation"
-                  },
-                  {
+                },
+                {
                     "command": "extension.untrack",
                     "group": "navigation"
-                  },
-                  {
+                },
+                {
                     "command": "extension.untrackList",
                     "group": "navigation"
-                  }
-                  
-			]
-          }
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "extension.track",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.untrack",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.untrackList",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
