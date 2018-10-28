@@ -27,8 +27,8 @@ export function activate(context: vscode.ExtensionContext) {
         bashUtil = new WindowsBashUtil();
     }
 
-    let track = vscode.commands.registerCommand('extension.untrack', async (fileUri) => {
-        //console.log(fileUri);
+    let untrack = vscode.commands.registerCommand('extension.untrack', async (fileUri) => {
+        console.log(process.env.VSCODE_CWD);
         let filePath = fileUri.fsPath;
         let folderName = path.dirname(filePath);
         let fileName = path.basename(filePath);
@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
         
     })
 
-    let untrack = vscode.commands.registerCommand('extension.track', async (fileUri) => {
+    let track = vscode.commands.registerCommand('extension.track', async (fileUri) => {
         //console.log(fileUri);
         let filePath = fileUri.fsPath;
         let folderName = path.dirname(filePath);
@@ -102,9 +102,26 @@ export function activate(context: vscode.ExtensionContext) {
         }); 
     })
 
+    let ignoreAllDeleted = vscode.commands.registerCommand('extension.ignoreAllDeleted', async (fileUri) => {
+        if(fileUri.fsPath==undefined){
+            fileUri = fileUri.resourceUri;
+        }
+        let filePath = fileUri.fsPath;
+        let folderName = path.dirname(filePath);
+        let fileName = path.basename(filePath);
+        let  ignoreDeletedCmd = 'cd "'+folderName+'" && git ls-files --deleted -z | git update-index --assume-unchanged -z --stdin';
+        bashUtil.executeCommand(ignoreDeletedCmd).then(function(result) {
+            console.log(result);
+        }).catch(function(e) {
+            console.error(e.message);
+        }); 
+
+        vscode.window.showInformationMessage(fileName+ ' will not be tracked by git!');
+    })
     context.subscriptions.push(track);
     context.subscriptions.push(untrack);
     context.subscriptions.push(untrack_list);
+    context.subscriptions.push(ignoreAllDeleted);
 }
 
 // this method is called when your extension is deactivated

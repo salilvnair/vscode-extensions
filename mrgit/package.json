@@ -29,6 +29,10 @@
                 "title": "Git-Untrack"
             },
             {
+                "command": "extension.ignoreAllDeleted",
+                "title": "Git-Untrack Deleted"
+            },
+            {
                 "command": "extension.untrackList",
                 "title": "Show Git-Untrack List"
             }
@@ -41,6 +45,10 @@
                 },
                 {
                     "command": "extension.untrack",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.ignoreAllDeleted",
                     "group": "navigation"
                 },
                 {
@@ -58,10 +66,32 @@
                     "group": "navigation"
                 },
                 {
+                    "command": "extension.ignoreAllDeleted",
+                    "group": "navigation"
+                },
+                {
                     "command": "extension.untrackList",
                     "group": "navigation"
                 }
-            ]
+            ],
+            "scm/resourceState/context": [
+				{
+                    "command": "extension.track",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.untrack",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.ignoreAllDeleted",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.untrackList",
+                    "group": "navigation"
+                }
+			]
         }
     },
     "scripts": {
