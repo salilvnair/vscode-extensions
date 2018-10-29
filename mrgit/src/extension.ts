@@ -28,7 +28,9 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     let untrack = vscode.commands.registerCommand('extension.untrack', async (fileUri) => {
-        console.log(process.env.VSCODE_CWD);
+        if(fileUri.fsPath == undefined) {
+            fileUri = fileUri.resourceUri;
+        }
         let filePath = fileUri.fsPath;
         let folderName = path.dirname(filePath);
         let fileName = path.basename(filePath);
@@ -52,7 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
     })
 
     let track = vscode.commands.registerCommand('extension.track', async (fileUri) => {
-        //console.log(fileUri);
+        if(fileUri.fsPath == undefined) {
+            fileUri = fileUri.resourceUri;
+        }
         let filePath = fileUri.fsPath;
         let folderName = path.dirname(filePath);
         let fileName = path.basename(filePath);
@@ -76,7 +80,9 @@ export function activate(context: vscode.ExtensionContext) {
     })
 
     let untrack_list = vscode.commands.registerCommand('extension.untrackList', async (fileUri) => {
-        //console.log(fileUri);
+        if(fileUri.fsPath == undefined) {
+            fileUri = fileUri.resourceUri;
+        }
         let filePath = fileUri.fsPath;
         let folderName = path.dirname(filePath);
         let fileName = path.basename(filePath);
