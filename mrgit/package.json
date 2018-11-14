@@ -17,80 +17,189 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello1",
-                "title": "Init Hello"
+                "command": "extension.skipTrack",
+                "title": "MrGit-Skip"
+            },
+            {
+                "command": "extension.unskipTrack",
+                "title": "MrGit-No Skip"
+            },
+            {
+                "command": "extension.skipList",
+                "title": "MrGit-Skip List"
             },
             {
                 "command": "extension.track",
-                "title": "Git-Track"
+                "title": "MrGit-No Assume Unchanged"
             },
             {
                 "command": "extension.untrack",
-                "title": "Git-Untrack"
+                "title": "MrGit-Assume Unchanged"
             },
             {
                 "command": "extension.ignoreAllDeleted",
-                "title": "Git-Untrack Deleted"
+                "title": "MrGit-Assume Unchanged Deleted"
             },
             {
                 "command": "extension.untrackList",
-                "title": "Show Git-Untrack List"
+                "title": "MrGit-Show Untrack List"
+            },
+            {
+                "command": "extension.setGitConfig",
+                "title": "MrGit-Set gitconfig"
+            },
+            {
+                "command": "extension.getGitConfig",
+                "title": "MrGit-Get gitconfig"
+            },
+            {
+                "command": "extension.getGitBranches",
+                "title": "MrGit-Get Branches"
+            },
+            {
+                "command": "extension.downloadGitDiff",
+                "title": "MrGit-Download Diff"
             }
         ],
         "menus": {
             "editor/context": [
+                
+                {
+                    "command": "extension.downloadGitDiff",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.skipTrack",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.unskipTrack",
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "extension.skipList",
+                    "group": "navigation@3"
+                },
                 {
                     "command": "extension.track",
-                    "group": "navigation"
+                    "group": "navigation@5"
                 },
                 {
                     "command": "extension.untrack",
-                    "group": "navigation"
+                    "group": "navigation@4"
                 },
                 {
                     "command": "extension.ignoreAllDeleted",
-                    "group": "navigation"
+                    "group": "navigation@6"
                 },
                 {
                     "command": "extension.untrackList",
-                    "group": "navigation"
-                }
+                    "group": "navigation@7"
+                },
+                {
+                    "command": "extension.setGitConfig",
+                    "group": "navigation@8"
+                },
+                {
+                    "command": "extension.getGitConfig",
+                    "group": "navigation@9"
+                },
+                {
+                    "command": "extension.getGitBranches",
+                    "group": "navigation@10"
+                }                
             ],
             "explorer/context": [
                 {
+                    "command": "extension.skipTrack",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.downloadGitDiff",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.unskipTrack",
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "extension.skipList",
+                    "group": "navigation@3"
+                },
+                {
                     "command": "extension.track",
-                    "group": "navigation"
+                    "group": "navigation@5"
                 },
                 {
                     "command": "extension.untrack",
-                    "group": "navigation"
+                    "group": "navigation@4"
                 },
                 {
                     "command": "extension.ignoreAllDeleted",
-                    "group": "navigation"
+                    "group": "navigation@6"
                 },
                 {
                     "command": "extension.untrackList",
-                    "group": "navigation"
-                }
+                    "group": "navigation@7"
+                },
+                {
+                    "command": "extension.setGitConfig",
+                    "group": "navigation@8"
+                },
+                {
+                    "command": "extension.getGitConfig",
+                    "group": "navigation@9"
+                },
+                {
+                    "command": "extension.getGitBranches",
+                    "group": "navigation@10"
+                }        
             ],
             "scm/resourceState/context": [
-				{
+                {
+                    "command": "extension.skipTrack",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.downloadGitDiff",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.unskipTrack",
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "extension.skipList",
+                    "group": "navigation@3"
+                },
+                {
                     "command": "extension.track",
-                    "group": "navigation"
+                    "group": "navigation@5"
                 },
                 {
                     "command": "extension.untrack",
-                    "group": "navigation"
+                    "group": "navigation@4"
                 },
                 {
                     "command": "extension.ignoreAllDeleted",
-                    "group": "navigation"
+                    "group": "navigation@6"
                 },
                 {
                     "command": "extension.untrackList",
-                    "group": "navigation"
-                }
+                    "group": "navigation@7"
+                },
+                {
+                    "command": "extension.setGitConfig",
+                    "group": "navigation@8"
+                },
+                {
+                    "command": "extension.getGitConfig",
+                    "group": "navigation@9"
+                },
+                {
+                    "command": "extension.getGitBranches",
+                    "group": "navigation@10"
+                }        
 			]
         }
     },

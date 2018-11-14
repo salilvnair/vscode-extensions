@@ -8,8 +8,10 @@ export class WindowsBashUtil implements BashUtil {
             delete process.platform;
             process.platform = 'linux';
             cp.exec(commandString,{
-                env: { PATH: 'C:\\progra~1\\git\\bin' },
-                shell: 'C:\\progra~1\\git\\bin\\bash.exe'
+                 env: { PATH: 'C:\\progra~1\\git\\bin' },
+                 shell: 'C:\\progra~1\\git\\bin\\bash.exe'
+               //  env: { PATH: 'C:\\Windows\\System32\\bash.exe' },
+               //  shell: 'C:\\progra~1\\git\\bin\\bash.exe'
               }, (error, stdout, stderr) => {
                 if (error) {
                     reject(error);
